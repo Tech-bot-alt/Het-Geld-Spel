@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <title>Het Geld Spel</title>
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/809/809957.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="login-container">
+    <h1 style="font-family:'Orbitron', Arial, sans-serif;font-size:2.5em;text-align:center;letter-spacing:0.1em;color:#3cf;margin-top:0;">
+      Het Geld Spel
+    </h1>
+    <h2>Inloggen</h2>
+    <div id="oauth-buttons">
+      <button class="oauth github" onclick="oauthNotImplemented('GitHub')">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" />
+        Inloggen met GitHub
+      </button>
+      <button class="oauth google" onclick="oauthNotImplemented('Google')">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg" alt="Google" />
+        Inloggen met Google
+      </button>
+      <button class="oauth microsoft" onclick="oauthNotImplemented('Microsoft')">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoft/microsoft-original.svg" alt="Microsoft" />
+        Inloggen met Microsoft
+      </button>
+    </div>
+    <div style="height:18px;"></div>
+    <input type="text" id="username" placeholder="Gebruikersnaam" autocomplete="username" />
+    <input type="password" id="password" placeholder="Wachtwoord" autocomplete="current-password" />
+    <button onclick="login()">Inloggen</button>
+    <div id="login-message"></div>
+    <hr/>
+    <h3>Account aanmaken</h3>
+    <input type="text" id="new-username" placeholder="Gebruikersnaam" autocomplete="username" />
+    <input type="password" id="new-password" placeholder="Wachtwoord" autocomplete="new-password" />
+    <button onclick="register()">Account aanmaken</button>
+    <div id="register-message"></div>
+  </div>
+
+  <div id="game-container" style="display:none;">
+    <h1 style="font-family:'Orbitron', Arial, sans-serif;font-size:2.5em;text-align:center;letter-spacing:0.1em;color:#3cf;margin-top:0;">
+      Het Geld Spel
+    </h1>
+    <div id="top-bar">
+      <span id="geld"></span>
+      <span id="welcome"></span>
+      <button onclick="logout()" id="logout-btn">Uitloggen</button>
+    </div>
+    <div id="stats-bar">
+      <span id="buildings"></span>
+      <span id="income"></span>
+    </div>
+    <div id="controls">
+      <div id="gebouw-buttons"></div>
+      <button onclick="playSound('cash')">Geld geluid</button>
+      <button onclick="resetCamera()">Reset Camera</button>
+      <button onclick="playSound('city')">Stad geluid</button>
+      <label><input type="checkbox" id="music-toggle" /> Muziek aan/uit</label>
+    </div>
+    <div id="canvas-container"></div>
+  </div>
+
+  <!-- Geluiden -->
+  <audio id="audio-cash" src="assets/sounds/cash.mp3"></audio>
+  <audio id="audio-city" src="assets/sounds/city.mp3"></audio>
+  <audio id="audio-music" src="assets/sounds/music.mp3" loop></audio>
+
+  <script src="https://cdn.jsdelivr.net/npm/three@0.153.0/build/three.min.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
