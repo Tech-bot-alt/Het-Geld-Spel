@@ -7,4 +7,4 @@ function loginWithGitHub() {
 }
 
 // Bijvoorbeeld, aan een knop koppelen:
-document.getElementById('github-login-btn').addEventListener('click', loginWithGitHub);
+document.getElementById('oauth github').addEventListener('click', loginWithGitHub);
