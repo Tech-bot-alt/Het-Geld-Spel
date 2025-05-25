@@ -1,54 +1,72 @@
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Montserrat:wght@400;700&display=swap');
-
-/* ... bestaande CSS hierboven ... */
-
+body {
+  background: linear-gradient(135deg, #f0f4f8 0%, #c0e0fc 100%);
+  font-family: 'Segoe UI', Arial, sans-serif;
+  min-height: 100vh;
+  margin: 0;
+}
+#login-container, #game-container {
+  box-shadow: 0 2px 16px #0002;
+  border-radius: 12px;
+  padding: 24px 32px 32px 32px;
+  background: white;
+  max-width: 400px;
+  margin: 2em auto;
+  display: block;
+}
+h1, h2, h3 {
+  text-align: center;
+  color: #3cf;
+  margin-top: 0;
+  font-family: 'Orbitron', Arial, sans-serif;
+}
+button, input[type="text"], input[type="password"] {
+  border-radius: 8px;
+  padding: 8px 16px;
+  border: 1px solid #cce;
+  margin-bottom: 12px;
+  font-size: 1.1em;
+  width: 100%;
+  box-sizing: border-box;
+}
+button {
+  background: #3cf;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+button:hover {
+  background: #248cce;
+}
 #oauth-buttons {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 10px;
   margin-bottom: 18px;
 }
-
-#oauth-buttons button.oauth {
+.oauth {
   display: flex;
   align-items: center;
-  gap: 12px;
   justify-content: center;
-  font-family: inherit;
-  font-size: 1.11em;
-  font-weight: bold;
-  border-radius: 9px;
-  border: none;
-  box-shadow: 0 2px 12px #0005;
-  outline: none;
-  padding: 10px 18px 10px 12px;
-  cursor: pointer;
-  background: #24292f;
-  color: #fff;
-  transition: background 0.15s, transform 0.13s;
-  letter-spacing: 0.02em;
+  background: #f4f4f4;
+  color: #222;
+  border: 1px solid #dde;
+  transition: background 0.2s;
 }
-#oauth-buttons button.oauth img {
-  width: 24px;
+.oauth img {
   height: 24px;
-  display: inline-block;
+  margin-right: 12px;
+  vertical-align: middle;
 }
-
-#oauth-buttons button.github { background: #23272c; }
-#oauth-buttons button.github:hover { background: #444950; }
-#oauth-buttons button.google { background: #fff; color: #222; border: 1px solid #ddd; }
-#oauth-buttons button.google:hover { background: #f4f4f4; }
-#oauth-buttons button.microsoft { background: #f3f3f3; color: #262626; border: 1px solid #ccc; }
-#oauth-buttons button.microsoft:hover { background: #e1e1e1; }
-
-#oauth-buttons button.oauth img[alt="Google"] {
-  background: #fff;
-  border-radius: 50%;
-  padding: 2px;
+.oauth.github:hover { background: #24292f; color: #fff; }
+.oauth.google:hover { background: #ea4335; color: #fff; }
+.oauth.microsoft:hover { background: #0078d4; color: #fff; }
+#top-bar, #stats-bar {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1em;
 }
-
-#oauth-buttons button.oauth img[alt="Microsoft"] {
-  background: #fff;
-  border-radius: 6px;
-  padding: 2px;
+#login-message, #register-message {
+  color: #d32f2f;
+  min-height: 20px;
 }
